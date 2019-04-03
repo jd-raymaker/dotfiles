@@ -185,7 +185,7 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
 
 # Set inner/outer gaps
 gaps inner 10
-gaps outer -4
+gaps outer 4
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
