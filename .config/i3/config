@@ -168,6 +168,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton --config $HOME/.config/compton.conf
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/brs.png
 
+# Monitor setup
+exec_always --no-startup-id $HOME/.screenlayout/default.sh
+
 # Remove titlebars
 new_window 1pixel
 
