@@ -72,13 +72,14 @@ bindsym $mod+Shift+Right move right
 # split in vertical orientation
 #bindsym $mod+Control+v split v
 
+# split toggle
+bindsym $mod+s split toggle
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+e layout toggle all
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -166,7 +167,7 @@ bindsym $mod+r mode "resize"
 # Exec stuff
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton --config $HOME/.config/compton.conf
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/brs.png
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/brs.png
 
 # Monitor setup
 exec_always --no-startup-id $HOME/.screenlayout/default.sh
