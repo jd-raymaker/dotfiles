@@ -183,6 +183,15 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
 
+# Screenshot
+bindsym --release Shift+Print exec $HOME/scripts/screenshot.sh 
+
+# Force flaoting windows
+for_window [class="Steam"] floating enable
+
+# Toggle floating
+bindsym $mod+Shift+f floating toggle
+
 #############################
 ### settings for i3-gaps: ###
 #############################
