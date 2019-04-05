@@ -262,7 +262,7 @@ label-disconnected-foreground = #f00
 type = internal/date
 interval = 5
 
-date = " %a %d %B - week: %W"
+date = " %a %d %B - week: %V"
 date-alt = " %d-%m-%Y"
 
 time = %R
