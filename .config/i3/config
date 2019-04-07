@@ -167,7 +167,6 @@ bindsym $mod+r mode "resize"
 # Exec stuff
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton --config $HOME/.config/compton.conf
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/brs.png
 
 # Monitor setup
 exec_always --no-startup-id $HOME/.screenlayout/default.sh
