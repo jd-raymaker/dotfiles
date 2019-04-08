@@ -116,9 +116,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Restore wallpaper on next session if feh dotfile exist
-if [ -f ~/.fehbg ]; then
-	. ~/.fehbg
-fi
-
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
