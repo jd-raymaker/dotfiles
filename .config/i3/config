@@ -188,9 +188,7 @@ bindsym --release Shift+Print exec bash $HOME/scripts/screenshot.sh
 
 # Force flaoting windows
 for_window [class="Steam"] floating enable
-
-# Toggle floating
-bindsym $mod+Shift+f floating toggle
+for_window [class="VirtualBox"] floating enable
 
 #############################
 ### settings for i3-gaps: ###
