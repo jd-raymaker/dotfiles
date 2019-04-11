@@ -172,8 +172,9 @@ exec_always --no-startup-id . $HOME/.fehbg
 # Monitor setup
 exec_always --no-startup-id $HOME/.screenlayout/default.sh
 
-# Remove titlebars
-new_window 1pixel
+# Titlebars
+default_border pixel 2
+default_floating_border normal
 
 # Disable mouse focus (we don't need a mouse now do we?)
 focus_follows_mouse no
@@ -188,7 +189,7 @@ bindsym --release Shift+Print exec bash $HOME/scripts/screenshot.sh
 
 # Force flaoting windows
 for_window [class="Steam"] floating enable
-for_window [class="VirtualBox"] floating enable
+for_window [class="VirtualBox Manager"] floating enable, border normal
 
 #############################
 ### settings for i3-gaps: ###
