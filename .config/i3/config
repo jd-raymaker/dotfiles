@@ -165,9 +165,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Exec stuff
+# Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Compton
 exec_always --no-startup-id compton --config $HOME/.config/compton.conf
+# feh
 exec_always --no-startup-id . $HOME/.fehbg
+# Dunst
 exec_always --no-startup-id dunst
 
 # Monitor setup
