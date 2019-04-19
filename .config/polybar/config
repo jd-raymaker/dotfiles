@@ -104,7 +104,7 @@ interval = 25
 mount-0 = /
 mount-1 = /mnt/sdb2
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted =  %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 ;label-mounted = %mountpoint%: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
@@ -207,7 +207,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU: "
+format-prefix = " CPU: " 
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
 label = %percentage:2%%
@@ -215,7 +215,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "RAM: "
+format-prefix = " RAM: "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 label = %percentage_used%%
@@ -280,7 +280,7 @@ label-padding = 4
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = 🔈Vol %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
