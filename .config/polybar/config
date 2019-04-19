@@ -51,9 +51,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "UbuntuMono Nerd Font:size=10;2"
-font-1 = "UbuntuMono Nerd Font:size=16;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
+font-0 = "UbuntuMono Nerd Font:size=10"
+font-1 = "FontAwesome5Brands:style=Regular:pixelsize=11"
+font-2 = "FontAwesome5Free:style=Solid:pixelsize=11"
 
 modules-left = bspwm i3
 modules-center = date 
@@ -249,12 +249,12 @@ interval = 3.0
 
 ;format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected = <label-connected>
-label-connected = %local_ip%
+label-connected = 
 label-connected-foreground = #0f0
 
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = %ifname% down
+label-disconnected = 
 label-disconnected-foreground = #f00
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -280,11 +280,11 @@ label-padding = 4
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+label-muted = 
+label-muted-foreground = #f00
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -390,16 +390,16 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = Menu
+label-open = 
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = 
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = Reboot
 menu-0-0-exec = menu-open-1
-menu-0-1 = Power off
+menu-0-1 = Power Off
 menu-0-1-exec = menu-open-2
 
 menu-1-0 = Cancel
