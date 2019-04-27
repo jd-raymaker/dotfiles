@@ -195,6 +195,10 @@ bindsym --release Shift+Print exec bash $HOME/scripts/screenshot.sh
 # Force flaoting windows
 for_window [class="Steam"] floating enable
 for_window [class="VirtualBox Manager"] floating enable, border normal
+for_window [class="MultiMC"] floating enable, border normal
+for_window [class="lxapperance"] floating enable, border normal
+for_window [class="nautilus"] floating enable, border normal
+for_window [class="minecraft-launcher"] floating enable, border normal
 
 #############################
 ### settings for i3-gaps: ###
