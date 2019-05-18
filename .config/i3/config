@@ -166,16 +166,18 @@ bindsym $mod+r mode "resize"
 
 # Exec stuff
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 # Compton
-exec_always --no-startup-id compton --config $HOME/.config/compton.conf
+exec_always --no-startup-id compton --config $HOME/.config/compton.conf &
 # feh
-exec_always --no-startup-id . $HOME/.fehbg
+# exec_always --no-startup-id . $HOME/.fehbg
+# restore wallpaper with Nitrogen
+exec_always --no-startup-id nitrogen --restore &
 # Dunst
-exec_always --no-startup-id dunst
+exec_always --no-startup-id dunst &
 
 # Monitor setup
-exec_always --no-startup-id $HOME/.screenlayout/default.sh
+exec_always --no-startup-id $HOME/.screenlayout/default.sh &
 
 # Titlebars
 default_border pixel 2
