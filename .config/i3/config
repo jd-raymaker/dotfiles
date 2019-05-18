@@ -90,6 +90,9 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# open rofi app switcher
+bindsym $mod+w exec rofi -show window 
+
 # focus the child container
 #bindsym $mod+d focus child
 
