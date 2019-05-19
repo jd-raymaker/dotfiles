@@ -12,3 +12,9 @@ colorscheme iceberg
 set showmatch
 set number
 
+" Keybinds
+let mapleader = "\<Space>"
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+noremap <Leader>Y "*y
+noremap <Leader>P "*p
