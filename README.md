@@ -1,6 +1,6 @@
 # JayDee's dotfiles
 
-## Prerequisites
+## Applications
 
  - i3-gaps      https://github.com/Airblader/i3
  - polybar      https://github.com/jaagr/polybar
@@ -10,6 +10,7 @@
  - xrandr       https://wiki.archlinux.org/index.php/Xrandr
  - neovim	https://github.com/neovim/neovim/wiki/Installing-Neovim
  - nitrogen
+ - scrot
 
 ## Installation
 

@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # Working folder
 wf=$HOME/Pictures/screenshots/
@@ -12,4 +12,4 @@ if [ ! -d "$wf" ]; then
 	mkdir $wf
 fi
 
-import $wf$filename
+scrot -s '%Y%m%d-%H%M%S.png' -e 'mv $f ~/Pictures/screenshots'
