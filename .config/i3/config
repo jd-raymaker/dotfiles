@@ -93,6 +93,9 @@ bindsym $mod+a focus parent
 # open rofi app switcher
 bindsym $mod+w exec rofi -show window 
 
+# lock computer
+bindsym $mod+shift+l exec i3lock-fancy
+
 # focus the child container
 #bindsym $mod+d focus child
 
