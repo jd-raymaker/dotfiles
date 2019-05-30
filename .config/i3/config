@@ -94,7 +94,7 @@ bindsym $mod+a focus parent
 bindsym $mod+w exec rofi -show window 
 
 # lock computer
-bindsym $mod+shift+l exec i3lock-fancy
+bindsym $mod+Control+l exec i3lock-fancy
 
 # focus the child container
 #bindsym $mod+d focus child
