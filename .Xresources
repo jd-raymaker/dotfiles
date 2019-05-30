@@ -1,6 +1,6 @@
 ! special
 *.foreground:   #c5c5c5
-! *.background:   #1c1c1c
+*.background:   #1c1c1c
 *.cursorColor:  #c5c5c5
 
 ! black
@@ -35,9 +35,11 @@
 *.color7:       #e5e5e5
 *.color15:      #f3f3f3
 
+! URxvt
 URxvt.font: xft:monospace:size=12
 URxvt.scrollBar: false
 URxvt.depth: 32
 URxvt.background: [95]#1c1c1c
 
+! Other
 Xcursor.size: 16
