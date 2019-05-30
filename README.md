@@ -11,6 +11,8 @@
  - neovim	https://github.com/neovim/neovim/wiki/Installing-Neovim
  - nitrogen
  - scrot
+ - ranger
+ - rxvt-unicode
 
 ## Installation
 
