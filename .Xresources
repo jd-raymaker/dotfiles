@@ -37,9 +37,9 @@
 
 ! URxvt
 URxvt.font: xft:monospace:size=12
-URxvt.scrollBar: false
-URxvt.depth: 32
-URxvt.background: [95]#1c1c1c
+URxvt*scrollBar: false
+URxvt*depth: 32
+URxvt*background: [95]#1c1c1c
 
 ! Other
 Xcursor.size: 16
