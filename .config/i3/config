@@ -209,6 +209,9 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Ranger
+bindsym $mod+z exec i3-sensible-terminal -e ranger
+
 # Screenshot
 bindsym --release Shift+Print exec bash $HOME/scripts/screenshot.sh 
 
