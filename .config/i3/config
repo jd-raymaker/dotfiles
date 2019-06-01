@@ -216,6 +216,9 @@ bindsym --release Shift+Print exec bash $HOME/scripts/screenshot.sh
 for_window [class="Steam"] floating enable
 for_window [class="VirtualBox Manager"] floating enable, border normal
 
+# Split toggle containers
+for_window [class=".*"] split toggle
+
 #############################
 ### settings for i3-gaps: ###
 #############################
