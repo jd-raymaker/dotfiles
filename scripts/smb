@@ -1,0 +1,80 @@
+#!/bin/bash
+
+while [ $# -gt 0 ]
+do
+	case "$1" in
+		-h | --help)
+			echo "Connects to an SMB share using mount.cifs"
+			echo ""
+			echo "options:"
+			echo "-h, --help	show this help"
+			echo "-H, --host	hostname/IP of host"
+			echo "-s, --share	share/folder name"
+			echo "-u, --user	username"
+			exit
+			;;
+		-H | --host)
+			shift
+			if [ $# -gt 0 ]; then
+				host=$1
+			else
+				echo "Error: no host specified"
+				exit 1
+			fi
+			shift
+			;;
+		-s | --share)
+			shift
+			if [ $# -gt 0 ]; then
+				share=$1
+			else
+				echo "Error: no share specified"
+				exit 1
+			fi
+			shift
+			;;
+		-u | --user)
+			shift
+			if [ $# -gt 0 ]; then
+				user=$1
+			else
+				echo "Error: no user specified"
+				exit 1
+			fi
+			shift
+			;;
+
+		*)
+			echo "Error. Unknown flag $1"
+			exit 1
+			;;
+	esac
+done
+
+# Host and share needs to be specified
+if [ ! $host ] || [ ! $share ]; then
+	echo "Error: no host or share specified"
+	exit 1
+fi
+
+# If no username specified, use currently loged on user from local machine
+if [ ! $user ]; then
+	user=$USERNAME
+fi
+
+# Create folders if not exists
+if [ ! -d "$HOME/$host" ]; then
+	mkdir $HOME/$host
+fi
+
+if [ ! -d "$HOME/$host/$share" ]; then
+	mkdir $HOME/$host/$share
+fi
+
+# Is mounted already?
+if grep -qs $HOME/$host/$share /proc/mounts; then
+	echo "Already mounted. Exiting..."
+	exit 1
+else
+	sudo mount -t cifs -o username=$user,uid=$(id -u),gid=$(id -g) //$host/$share $HOME/$host/$share
+fi
