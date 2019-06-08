@@ -191,6 +191,9 @@ exec_always --no-startup-id nitrogen --restore &
 # Dunst
 exec_always --no-startup-id dunst &
 
+# Set mouse speed
+exec_always --no-startup-id xinput --set-prop "ROCCAT ROCCAT Kone Aimo Mouse" "libinput Accel Speed" -0.8 & 
+
 # Monitor setup
 exec_always --no-startup-id $HOME/.screenlayout/default.sh &
 
