@@ -189,7 +189,7 @@ exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id dunst &
 
 # Set mouse speed
-exec_always --no-startup-id xinput --set-prop "ROCCAT ROCCAT Kone Aimo Mouse" "libinput Accel Speed" -0.8 & 
+exec_always --no-startup-id xinput --set-prop "ROCCAT ROCCAT Kone Aimo Mouse" "libinput Accel Speed" 0.0 &
 
 # Titlebars
 default_border pixel 2
