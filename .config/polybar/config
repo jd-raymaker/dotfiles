@@ -88,10 +88,9 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /mnt/sdb2
 
 label-mounted =  %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
+label-unmounted = %mountpoint% unmounted 
 label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
