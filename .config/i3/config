@@ -177,6 +177,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Exec stuff
+exec_always --no-startup-id nvidia-settings -l &
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 # Compton
