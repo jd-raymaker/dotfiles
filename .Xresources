@@ -42,4 +42,5 @@ URxvt*depth: 32
 URxvt*background: [95]#1c1c1c
 
 ! Other
+Xcursor.theme: Dot-Dark
 Xcursor.size: 16
