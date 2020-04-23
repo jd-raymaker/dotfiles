@@ -18,8 +18,7 @@
  - xrandr       https://wiki.archlinux.org/index.php/Xrandr
  - neovim	https://github.com/neovim/neovim/wiki/Installing-Neovim
  - vim-plug	https://github.com/junegunn/vim-plug
- - i3lock-fancy
- - dmenu
+ - i3lock
  - nitrogen
  - scrot
  - ranger
