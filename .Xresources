@@ -36,7 +36,7 @@
 *.color15:      #f3f3f3
 
 ! URxvt
-URxvt.font: xft:monospace:size=12
+URxvt.font: xft:Hack:regular:size=12
 URxvt*scrollBar: false
 URxvt*depth: 32
 URxvt*background: [95]#1c1c1c
