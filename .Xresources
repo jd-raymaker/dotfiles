@@ -40,4 +40,4 @@ URxvt.font: xft:Hack:regular:size=12
 URxvt*scrollBar: false
 URxvt*depth: 32
 URxvt*background: [95]#1c1c1c
-
+URxvt*geometry: 150x60
