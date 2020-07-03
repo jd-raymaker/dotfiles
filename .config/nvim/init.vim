@@ -14,6 +14,8 @@ call plug#end()
 
 " Set colorscheme
 colorscheme iceberg
+" Transparency
+hi Normal ctermbg=NONE
 
 " General settings
 set showmatch
