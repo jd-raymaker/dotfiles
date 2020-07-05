@@ -203,6 +203,7 @@ bindsym --release Shift+Print exec bash $HOME/scripts/screenshot.sh
 # Force flaoting windows
 for_window [class="Steam"] floating enable
 for_window [class="Lutris"] floating enable
+for_window [class="UnityHub"] floating enable
 for_window [class="VirtualBox Manager"] floating enable, border normal
 
 # Split toggle containers
