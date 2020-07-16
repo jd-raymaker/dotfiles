@@ -7,8 +7,7 @@
 
 ```
 
-![Screenshot]
-(https://i.ibb.co/kQSztkd/20200701-114453.png)
+![Screenshot](https://i.ibb.co/kQSztkd/20200701-114453.png)
 
 ## Applications
 
