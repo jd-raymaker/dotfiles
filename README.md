@@ -7,6 +7,9 @@
 
 ```
 
+![Screenshot]
+(https://i.ibb.co/kQSztkd/20200701-114453.png)
+
 ## Applications
 
  - i3-gaps      https://github.com/Airblader/i3
