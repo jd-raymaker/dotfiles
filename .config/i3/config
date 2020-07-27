@@ -37,6 +37,7 @@ bindsym $mod+Shift+q kill
 
 # start rofi
 bindsym $mod+a --release exec --no-startup-id rofi -show run
+bindsym $mod+c --release exec --no-startup-id rofi -show calc
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -171,13 +172,21 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#############################
+# Autostart
+#
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 # restore wallpaper with Nitrogen
 exec_always --no-startup-id nitrogen --restore &
-# Automatic layout
-# Requires i3ipc python library
+# Automatic layout (Requires i3ipc python library)
 exec_always --no-startup-id "$HOME/.config/i3/scripts/autolayout.py"
+# Notification
+exec_always --no-startup-id dunst &
+# Session manager
+exec_always --no-startup-id lxsession &
+# NVIDIA
+exec_always --no-startup-id nvidia-settings -l &
 
 # Titlebars
 default_border pixel 2
@@ -211,8 +220,8 @@ for_window [class="steam_app_489830"] floating enable
 for_window [title="Microsoft Teams Notification"] floating enable
 for_window [class="VirtualBox Manager"] floating enable, border normal
 
-# Split toggle containers
-# for_window [class=".*"] split toggle
+# Don't focus notifications or windows alike
+no_focus [title="Microsoft Teams Notification"]
 
 #############################
 ### settings for i3-gaps: ###
