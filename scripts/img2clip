@@ -1,0 +1,20 @@
+#!/bin/bash
+# Copy image file to clipboard
+# by JayDee Raymaker
+
+# Get mime type of the file etc
+F="$1"
+TYPE=$(file -b --mime-type "$F")
+
+# If not png, convert it
+if [ $TYPE != "image/png" ]; then
+	TEMPFILE="/tmp/$(date +%Y%m%d-%H%M-$RANDOM.png)"
+	convert "$F" "$TEMPFILE"
+	F="$TEMPFILE"
+	TYPE=$(file -b --mime-type "$F")
+fi
+
+xclip -sel clip -t "$TYPE" < "$F"
+
+# Cleanup
+[[ -f "$TEMPFILE" ]] && rm -f "$TEMPFILE"
