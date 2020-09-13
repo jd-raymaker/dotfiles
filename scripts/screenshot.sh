@@ -4,12 +4,15 @@
 wf=$HOME/Pictures/screenshots/
 
 # Filename to save
-filename=$(date +%Y%m%d-%H%M%S.png)
+F=$wf$(date +%Y%m%d-%H%M%S.png)
 
 # Working directory exist?
 if [ ! -d "$wf" ]; then
 	# Create folder
-	mkdir $wf
+	mkdir -p $wf
 fi
 
-scrot -s '%Y%m%d-%H%M%S.png' -e 'mv $f ~/Pictures/screenshots'
+scrot -s "$F"
+
+# Bonus - copy image to clipboard
+xclip -sel clip -t $(file -b --mime-type "$F") < "$F"
