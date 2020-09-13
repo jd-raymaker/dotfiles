@@ -6,4 +6,7 @@ alias ll='ls -l'
 alias la='ls -la'
 
 # Find Top 10 largest files
-alias top10='find $HOME -type f -printf "%s %p\n" | sort -nr | head -10'
+alias top10='find . -type f -printf "%s %p\n" | sort -nr | head -10'
+
+# Play video in vr
+alias vrvideo='vr-video-player $(xdotool selectwindow)'
