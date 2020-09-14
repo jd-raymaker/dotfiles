@@ -1,5 +1,6 @@
 #!/bin/bash
 # Copy image file to clipboard
+# place this script in /usr/local/bin (remember to have this in PATH)
 # by JayDee Raymaker
 
 # Get mime type of the file etc
