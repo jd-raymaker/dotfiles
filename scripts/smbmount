@@ -4,7 +4,7 @@ while [ $# -gt 0 ]
 do
 	case "$1" in
 		-h | --help)
-			echo "Connects to an SMB share using mount.cifs"
+			echo "Connects and mounts an SMB share in home folder using mount.cifs"
 			echo ""
 			echo "options:"
 			echo "-h, --help	show this help"
@@ -63,12 +63,8 @@ if [ ! $user ]; then
 fi
 
 # Create folders if not exists
-if [ ! -d "$HOME/$host" ]; then
-	mkdir $HOME/$host
-fi
-
 if [ ! -d "$HOME/$host/$share" ]; then
-	mkdir $HOME/$host/$share
+	mkdir -p $HOME/$host/$share
 fi
 
 # Is mounted already?
