@@ -35,6 +35,9 @@
 *.color7:       #e5e5e5
 *.color15:      #f3f3f3
 
+! Xcursor
+Xcursor.size: 16
+
 ! URxvt
 URxvt.font: xft:Hack:regular:size=12
 URxvt*scrollBar: false

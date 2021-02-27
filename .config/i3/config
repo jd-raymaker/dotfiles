@@ -89,7 +89,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+p focus parent
 
 # lock computer using lightdm
-bindsym $mod+Control+l exec light-locker-command -l
+bindsym $mod+Control+l exec dm-tool lock 
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -104,16 +104,16 @@ set $ws8 "8"
 set $ws9 "9"
 
 # Assign workspace to monitors
-workspace $ws1 output HDMI-0
-workspace $ws2 output DP-4
-workspace $ws3 output DP-0
+workspace $ws1 output DP-2
+workspace $ws2 output DP-0
+workspace $ws3 output DP-4
+workspace $ws4 output HDMI-0
 # Assign all other workspace to main monitor
-workspace $ws4 output DP-4
-workspace $ws5 output DP-4
-workspace $ws6 output DP-4
-workspace $ws7 output DP-4
-workspace $ws8 output DP-4
-workspace $ws9 output DP-4
+workspace $ws5 output DP-0
+workspace $ws6 output DP-0
+workspace $ws7 output DP-0
+workspace $ws8 output DP-0
+workspace $ws9 output DP-0
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -187,6 +187,8 @@ exec_always --no-startup-id dunst &
 exec_always --no-startup-id lxsession &
 # NVIDIA
 exec_always --no-startup-id nvidia-settings -l &
+# udiskie
+exec_always --no-startup-id udiskie -s &
 
 # Titlebars
 default_border pixel 2
@@ -196,9 +198,9 @@ default_floating_border normal
 focus_follows_mouse no
 
 # Volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5
+bindsym XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5
+bindsym XF86AudioMute exec --no-startup-id pulsemixer --toggle-mute
 
 # Media Player controls
 bindsym XF86AudioPlay exec playerctl play-pause
