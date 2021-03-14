@@ -1,14 +1,13 @@
 #!/bin/bash
 
-echo "Starting dunst"
 dunst &
-echo "Starting lxsession"
 lxsession &
-echo "Restoring nitrogen wallpaper"
 nitrogen --restore &> /dev/null
-echo "Loading nvidia settings"
 nvidia-settings -l &
+udiskie -s &
 
 # Run pulseaudio as daemon if no pid is returned
-echo "Fixing pulseaudio daemon"
 pidof pulseaudio || pulseaudio -D &
+
+# Run status bar
+bash $HOME/.local/share/dwm/dwm_status &
