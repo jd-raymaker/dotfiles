@@ -6,6 +6,10 @@ alias ll='ls -l'
 alias la='ls -la'
 alias gh='cd $HOME'
 
+# System
+alias up='sudo pacman -Syu'
+alias upall='yay -Syu'
+
 # Applications
 alias vim='nvim'
 alias vi='nvim'
