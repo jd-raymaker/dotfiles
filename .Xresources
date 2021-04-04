@@ -43,4 +43,7 @@ URxvt.font: xft:Hack:regular:size=12
 URxvt*scrollBar: false
 URxvt.depth: 32
 URxvt*background: [95]#1c1c1c
-URxvt*geometry: 150x60
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: brave
+URxvt.matcher.button: 1
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&amp;@#-]*[\\w/-]
