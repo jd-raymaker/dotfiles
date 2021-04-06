@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while true; do
+	dt=$(date +" %a %d.%b.%Y  %R")
+	xsetroot -name " $dt"
+	sleep 10
+done
