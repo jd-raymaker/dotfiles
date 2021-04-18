@@ -39,11 +39,18 @@
 Xcursor.size: 16
 
 ! URxvt
+! Require urxvt-perls, urxvt-resize-font-git (AUR)
 URxvt.font: xft:Hack:regular:size=12
+URxvt.geometry: 120x40
 URxvt*scrollBar: false
 URxvt.depth: 32
 URxvt*background: [95]#1c1c1c
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,matcher,resize-font,clipboard
 URxvt.url-launcher: brave
 URxvt.matcher.button: 1
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&amp;@#-]*[\\w/-]
+URxvt.clipboard.autocopy: true
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.iso14755: false
+URxvt.iso14755_52: false
