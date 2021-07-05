@@ -15,6 +15,9 @@ alias vim='nvim'
 alias vi='nvim'
 alias ra='ranger'
 
+# Jekyll
+alias jserve='bundle exec jekyll serve --livereload'
+
 # Find Top 10 largest files
 alias top10='find . -type f -printf "%s %p\n" | sort -nr | head -10'
 
