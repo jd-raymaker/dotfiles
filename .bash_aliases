@@ -11,6 +11,7 @@ alias up='sudo pacman -Syu'
 alias upall='yay -Syu'
 alias algo='sudo systemctl start wg-quick@wg0'
 alias algo-stop='sudo systemctl stop wg-quick@wg0'
+alias loopback='sudo modprobe v4l2loopback'
 
 # Applications
 alias vim='nvim'

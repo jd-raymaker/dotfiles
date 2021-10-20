@@ -40,7 +40,7 @@ Xcursor.size: 16
 
 ! URxvt
 ! Require urxvt-perls, urxvt-resize-font-git (AUR)
-URxvt.font: xft:Hack:regular:size=12
+URxvt.font: xft:Hack:regular:size=12,xft:Source Code Pro:size=12
 URxvt.geometry: 120x40
 URxvt*scrollBar: false
 URxvt.depth: 32
