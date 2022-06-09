@@ -15,7 +15,7 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
 fi
 
 export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/:$PATH"
+export PATH="$HOME/gems/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/:$HOME/.local/share/applications/:$HOME/Applications/:$PATH"
 
 # Include bash config files
 source $HOME/.bash_aliases
