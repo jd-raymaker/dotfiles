@@ -8,6 +8,7 @@ call plug#begin('$HOME/.local/share/nvim/site/plugged')
 
 	Plug 'itchyny/lightline.vim'
 	Plug 'cocopon/iceberg.vim'
+	Plug 'andweeb/presence.nvim'
 
 call plug#end()
 
