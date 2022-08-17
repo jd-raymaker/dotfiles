@@ -15,9 +15,12 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
 fi
 
 export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/:$HOME/.local/share/applications/:$HOME/Applications/:$PATH"
+export PATH="$HOME/.local/bin:$HOME/gems/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/:$HOME/.local/share/applications/:$HOME/Applications/:$PATH"
 
 # Include bash config files
 source $HOME/.bash_aliases
 source $HOME/.bash_functions
+
+# OpenAI API
+[[ -f "$HOME/.keys/openai-api-key" ]] && OPENAI_API_KEY=$(cat $HOME/.keys/openai-api-key)
 

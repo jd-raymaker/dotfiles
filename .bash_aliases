@@ -5,7 +5,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -la'
-alias gh='cd $HOME'
 
 # System
 alias up='sudo pacman -Syu'
