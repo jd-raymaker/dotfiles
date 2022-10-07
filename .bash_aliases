@@ -17,6 +17,7 @@ alias loopback='sudo modprobe v4l2loopback'
 alias vim='nvim'
 alias vi='nvim'
 alias ra='ranger'
+alias cal='cal -m'
 
 # Jekyll
 alias jserve='bundle exec jekyll serve --livereload'

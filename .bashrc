@@ -24,3 +24,5 @@ source $HOME/.bash_functions
 # OpenAI API
 [[ -f "$HOME/.keys/openai-api-key" ]] && OPENAI_API_KEY=$(cat $HOME/.keys/openai-api-key)
 
+
+complete -C /usr/bin/terraform terraform
