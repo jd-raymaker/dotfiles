@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dunst &
-lxsession &
+lxsession -a &
 nitrogen --restore & 
 nvidia-settings -l &
 udiskie -s &
