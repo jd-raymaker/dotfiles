@@ -11,3 +11,7 @@ function setproxy {
 	export http_proxy="$1"
 	export https_proxy="$1"
 }
+
+function unzip-docx {
+	unzip -p "$1" word/document.xml | sed -e 's/<[^>]\{1,\}>//g; s/[^[:print:]]\{1,\}//g'
+}
