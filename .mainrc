@@ -1,9 +1,6 @@
 #
-# ~/.bashrc
+# source this file in your .bashrc
 #
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 function _update_ps1() {
 	# Run powerline-shell if exist. If not, then use default PS1
@@ -23,6 +20,5 @@ source $HOME/.bash_functions
 
 # OpenAI API
 [[ -f "$HOME/.keys/openai-api-key" ]] && OPENAI_API_KEY=$(cat $HOME/.keys/openai-api-key)
-
 
 complete -C /usr/bin/terraform terraform
