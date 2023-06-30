@@ -14,6 +14,7 @@ import XMonad.Util.SpawnOnce
 import Data.Monoid
 import qualified XMonad.StackSet as W
 import qualified XMonad.Layout.ToggleLayouts as T (toggleLayouts, ToggleLayout(Toggle))
+import Graphics.X11.ExtraTypes.XF86
 
 ------------------
 -- Config
@@ -76,13 +77,13 @@ myKeys =
     , ("M-S-f",         withFocused $ windows . W.sink) -- Push to tile
     , ("M-S-q",         kill1) -- Kill focused
     -- Audio keys
-    , ((0, XF86XK_AudioRaiseVolume),    spawn audioRaiseVolume)
-    , ((0, XF86XK_AudioLowerVolume),    spawn audioLowerVolume)
-    , ((0, XF86XK_AudioPlay),           spawn audioPlayPause)
-    , ((0, XF86XK_AudioMute),           spawn audioMute)
-    , ((0, XF86XK_AudioStop),           spawn audioStop)
-    , ((0, XF86XK_AudioNext),           spawn audioNext)
-    , ((0, XF86XK_AudioPrev),           spawn audioPrev)
+    , ("XF86XK_AudioRaiseVolume",    spawn audioRaiseVolume)
+    , ("XF86XK_AudioLowerVolume",    spawn audioLowerVolume)
+    , ("XF86XK_AudioPlay",           spawn audioPlayPause)
+    , ("XF86XK_AudioMute",           spawn audioMute)
+    , ("XF86XK_AudioStop",           spawn audioStop)
+    , ("XF86XK_AudioNext",           spawn audioNext)
+    , ("XF86XK_AudioPrev",           spawn audioPrev)
     ]
 
 ----------------
