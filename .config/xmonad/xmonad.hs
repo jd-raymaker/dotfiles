@@ -30,6 +30,17 @@ myLauncher              = "rofi -show drun"
 myFileManager           = myTerminal ++ " -e ranger"
 
 ------------------
+-- Audio and player controls
+------------------
+audioMute           = "pulsemixer --toggle-mute"
+audioRaiseVolume    = "pulsemixer --change-volume +5"
+audioLowerVolume    = "pulsemixer --change-volume -5"
+audioPlayPause      = "playerctl play-pause"
+audioStop           = "playerctl stop"
+audioNext           = "playerctl next"
+audioPrev           = "playerctl previous"
+
+------------------
 -- Layout
 ------------------
 myLayoutHook = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True $ layoutHook def
@@ -57,13 +68,21 @@ myManageHook = composeAll
 -- Keybindings
 -----------------
 myKeys =
-    [ ("M-S-<Esc>", spawn myPowerMenu)              -- Quit xmonad
-    , ("M-<Return>", spawn myTerminal)              -- Spawn terminal
-    , ("M-S-q", kill1)                              -- Kill focused
-    , ("M-<Space>", spawn myLauncher)               -- Open rofi 
-    , ("M-r", spawn myFileManager)                  -- Open Ranger
-    , ("M-f", sendMessage (T.Toggle "floats"))      -- Set to float
-    , ("M-S-f", withFocused $ windows . W.sink)     -- Push to tile
+    [ ("M-S-<Esc>",     spawn myPowerMenu)
+    , ("M-<Return>",    spawn myTerminal)
+    , ("M-<Space>",     spawn myLauncher)
+    , ("M-r",           spawn myFileManager)
+    , ("M-f",           sendMessage (T.Toggle "floats"))
+    , ("M-S-f",         withFocused $ windows . W.sink) -- Push to tile
+    , ("M-S-q",         kill1) -- Kill focused
+    -- Audio keys
+    , ((0, XF86XK_AudioRaiseVolume),    spawn audioRaiseVolume)
+    , ((0, XF86XK_AudioLowerVolume),    spawn audioLowerVolume)
+    , ((0, XF86XK_AudioPlay),           spawn audioPlayPause)
+    , ((0, XF86XK_AudioMute),           spawn audioMute)
+    , ((0, XF86XK_AudioStop),           spawn audioStop)
+    , ((0, XF86XK_AudioNext),           spawn audioNext)
+    , ((0, XF86XK_AudioPrev),           spawn audioPrev)
     ]
 
 ----------------
