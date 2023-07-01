@@ -77,13 +77,13 @@ myKeys =
     , ("M-S-f",         withFocused $ windows . W.sink) -- Push to tile
     , ("M-S-q",         kill1) -- Kill focused
     -- Audio keys
-    , ("XF86XK_AudioRaiseVolume",    spawn audioRaiseVolume)
-    , ("XF86XK_AudioLowerVolume",    spawn audioLowerVolume)
-    , ("XF86XK_AudioPlay",           spawn audioPlayPause)
-    , ("XF86XK_AudioMute",           spawn audioMute)
-    , ("XF86XK_AudioStop",           spawn audioStop)
-    , ("XF86XK_AudioNext",           spawn audioNext)
-    , ("XF86XK_AudioPrev",           spawn audioPrev)
+    , ("<XF86AudioRaiseVolume>",    spawn audioRaiseVolume)
+    , ("<XF86AudioLowerVolume>",    spawn audioLowerVolume)
+    , ("<XF86AudioPlay>",           spawn audioPlayPause)
+    , ("<XF86AudioMute>",           spawn audioMute)
+    , ("<XF86AudioStop>",           spawn audioStop)
+    , ("<XF86AudioNext>",           spawn audioNext)
+    , ("<XF86AudioPrev>",           spawn audioPrev)
     ]
 
 ----------------
