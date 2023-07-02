@@ -8,12 +8,14 @@ import XMonad.Actions.CopyWindow (kill1)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Spacing
+import XMonad.Layout.NoBorders (noBorders, smartBorders)
+import XMonad.Layout.Tabbed (tabbedAlways, shrinkText, Theme(..))
+import XMonad.Layout.ToggleLayouts (ToggleLayout(..), toggleLayouts)
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.SpawnOnce
 import Data.Monoid
 import qualified XMonad.StackSet as W
-import qualified XMonad.Layout.ToggleLayouts as T (toggleLayouts, ToggleLayout(Toggle))
 import Graphics.X11.ExtraTypes.XF86
 
 ------------------
@@ -44,12 +46,29 @@ audioPrev           = "playerctl previous"
 ------------------
 -- Layout
 ------------------
-myLayoutHook = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True $ layoutHook def
+myLayouts = toggleLayouts (noBorders Full) (myTiled ||| myTabbed)
+    where
+        myTiled = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True $ layoutHook def
+        myTabbed = noBorders $ tabbedAlways shrinkText myTabConf
+
+myTabConf = def
+    { fontName = "xft:Hack:regular:pixelsize=12"
+    , activeColor         = "#267326"
+    , activeBorderColor   = "#40bf40"
+    , activeTextColor     = "#ffffff"
+    , inactiveColor       = "#496749"
+    , inactiveBorderColor = "#333333"
+    , inactiveTextColor   = "#dddddd"
+    , urgentColor         = "#900000"
+    , urgentBorderColor   = "#2f343a"
+    , urgentTextColor     = "#ffffff"
+    }
 
 -----------------
 -- Autostart
 -----------------
 myStartupHook =	do
+    spawn "$HOME/.config/polybar/launch.sh &"
     spawnOnce "dunst &"
     spawnOnce "nvidia-settings -l &"
     spawnOnce "udiskie -s &"
@@ -73,8 +92,7 @@ myKeys =
     , ("M-<Return>",    spawn myTerminal)
     , ("M-<Space>",     spawn myLauncher)
     , ("M-r",           spawn myFileManager)
-    , ("M-f",           sendMessage (T.Toggle "floats"))
-    , ("M-S-f",         withFocused $ windows . W.sink) -- Push to tile
+    , ("M-f",           sendMessage ToggleLayout)
     , ("M-S-q",         kill1) -- Kill focused
     -- Audio keys
     , ("<XF86AudioRaiseVolume>",    spawn audioRaiseVolume)
@@ -90,10 +108,10 @@ myKeys =
 -- Main
 ----------------
 main = do
-    xmproc <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc"
+    -- xmproc <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc"
     xmonad $ docks def 
             { manageHook            = manageDocks <+> myManageHook
-            , layoutHook            = avoidStruts myLayoutHook 
+            , layoutHook            = avoidStruts myLayouts 
             , borderWidth           = myBorderWidth
             , terminal              = myTerminal
             , modMask               = myModMask
