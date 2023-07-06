@@ -7,6 +7,7 @@ import XMonad
 import XMonad.Actions.CopyWindow (kill1)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders (noBorders, smartBorders)
 import XMonad.Layout.Tabbed (tabbedAlways, shrinkText, Theme(..))
@@ -67,8 +68,9 @@ myTabConf = def
 -----------------
 -- Autostart
 -----------------
-myStartupHook =	do
-    spawn "$HOME/.config/polybar/launch.sh &"
+myStartupHook = do
+    spawn     "$HOME/.config/polybar/launch.sh &"
+    spawnOnce "lxsession -a &"
     spawnOnce "dunst &"
     spawnOnce "nvidia-settings -l &"
     spawnOnce "udiskie -s &"
@@ -79,9 +81,9 @@ myStartupHook =	do
 -- --------------
 myManageHook :: XMonad.Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
-    [ className =? "vlc" 	--> doFloat
-    , className =? "mpv" 	--> doFloat
-    , className =? "Gimp" 	--> doFloat
+    [ className =? "vlc" --> doFloat
+    , className =? "mpv" --> doFloat
+    , className =? "Gimp" --> doFloat
     ]
 
 -----------------
@@ -108,10 +110,10 @@ myKeys =
 -- Main
 ----------------
 main = do
-    -- xmproc <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc"
-    xmonad $ docks def 
+    xmonad $ docks $ ewmhFullscreen . ewmh $ def
             { manageHook            = manageDocks <+> myManageHook
-            , layoutHook            = avoidStruts myLayouts 
+            , layoutHook            = avoidStruts myLayouts
+            , handleEventHook       = handleEventHook def
             , borderWidth           = myBorderWidth
             , terminal              = myTerminal
             , modMask               = myModMask
