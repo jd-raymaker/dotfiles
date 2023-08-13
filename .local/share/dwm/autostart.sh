@@ -3,6 +3,7 @@
 dunst &
 lxsession -a &
 nitrogen --restore & 
+numlockx &
 nvidia-settings -l &
 udiskie -s &
 xcompmgr -c -C -n &
