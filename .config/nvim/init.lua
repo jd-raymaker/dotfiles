@@ -1,7 +1,6 @@
 -- Autoinstall vim-plug
 if vim.fn.empty(vim.fn.glob('$HOME/.local/share/nvim/site/autoload/plug.vim')) then
   vim.fn.system({'curl', '-fLo', '$HOME/.local/share/nvim/site/autoload/plug.vim', '--create-dirs', 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'})
-  vim.cmd('autocmd VimEnter * PlugInstall --sync | source $MYVIMRC')
 end
 
 -- Plug function alias
@@ -9,7 +8,6 @@ local Plug = vim.fn['plug#']
 
 -- Plugins
 vim.call('plug#begin', '$HOME/.local/share/nvim/site/plugged')
---  Plug 'itchyny/lightline.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'cocopon/iceberg.vim'
