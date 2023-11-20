@@ -1,7 +1,10 @@
 -- Autoinstall vim-plug
-if vim.fn.empty(vim.fn.glob('$HOME/.local/share/nvim/site/autoload/plug.vim')) then
-  vim.fn.system({'curl', '-fLo', '$HOME/.local/share/nvim/site/autoload/plug.vim', '--create-dirs', 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'})
-end
+vim.cmd [[
+  if empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
+    !curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+]]
 
 -- Plug function alias
 local Plug = vim.fn['plug#']
@@ -16,6 +19,11 @@ vim.call('plug#begin', '$HOME/.local/share/nvim/site/plugged')
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'neovim/nvim-lspconfig'
   Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
+  Plug('nvim-treesitter/nvim-treesitter', {
+    ['do'] = function()
+      vim.cmd('TSUpdate')
+    end
+  })
 vim.call('plug#end')
 
 -- Set colorscheme
@@ -44,6 +52,7 @@ vim.api.nvim_set_keymap('n', '<Leader>P', '"*p', { noremap = true })
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
+lspconfig.lua_ls.setup{}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
