@@ -13,6 +13,10 @@ alias algo='sudo systemctl start wg-quick@wg0'
 alias algo-stop='sudo systemctl stop wg-quick@wg0'
 alias loopback='sudo modprobe v4l2loopback'
 
+# Git
+alias gfp='git fetch --prune'
+alias gbd='git branch | grep -v 'main' | xargs git branch -D'
+
 # Applications
 alias vim='nvim'
 alias vi='nvim'
