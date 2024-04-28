@@ -9,27 +9,9 @@
 
 ![Screenshot](https://i.ibb.co/kQSztkd/20200701-114453.png)
 
-### Recommended applications to install
-
-Applications	| Link
-------------|-------
-i3-gaps		| https://github.com/Airblader/i3
-polybar		| https://github.com/jaagr/polybar
-rofi			| https://github.com/davatorium/rofi
-dunst		| https://github.com/dunst-project/dunst
-xrandr		| https://wiki.archlinux.org/index.php/Xrandr
-neovim		| https://github.com/neovim/neovim/wiki/Installing-Neovim
-vim-plug		| https://github.com/junegunn/vim-plug
-nitrogen		| http://projects.l3ib.org/nitrogen/
-scrot		| https://github.com/resurrecting-open-source-projects/scrot
-ranger		| https://ranger.github.io/
-rxvt-unicode	| http://software.schmorp.de/pkg/rxvt-unicode.html
-xclip		| https://github.com/astrand/xclip
-lxsession	| 
-polkit 		|
+# Use at your own risk!
 
 ## Installation
-
 Installation script: https://gist.github.com/jd-raymaker/d9e0ebb53f75a82b74ab99f044635f34
 
 ```bash
@@ -50,7 +32,3 @@ config checkout
 config config status.showUntrackedFiles no
 ```
 
-## Todo
-- [ ] Keybinding list
-- [ ] Better Installation script
-- [ ] Prerequisite script installer
