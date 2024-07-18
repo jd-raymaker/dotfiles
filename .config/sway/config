@@ -177,7 +177,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshot
-bindsym --release Shift+Print exec (grim -g "$(slurp -d)" - | wl-copy)
+bindsym --release $mod+Shift+p exec (grim -g "$(slurp -d)" - | wl-copy)
 
 # swayr Window switcher
 bindsym $mod+Space       exec swayr switch-window
@@ -259,7 +259,7 @@ include /etc/sway/config.d/*
 ######
 # SwayFX ricing
 ######
-blur enable
-corner_radius 10
-shadows enable
+#blur enable
+#corner_radius 10
+#shadows enable
 
