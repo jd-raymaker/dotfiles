@@ -14,3 +14,8 @@ function setproxy {
 function unzip-docx {
 	unzip -p "$1" word/document.xml | sed -e 's/<[^>]\{1,\}>//g; s/[^[:print:]]\{1,\}//g'
 }
+
+function livepaper {
+	mpvpaper -s -o "no-audio loop" '*' $1 &
+	disown
+}
