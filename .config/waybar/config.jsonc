@@ -9,7 +9,7 @@
   "margin-right": 0,
   "modules-left": [
     "custom/launcher",
-    "sway/workspaces",
+    "hyprland/workspaces",
     "custom/playerctl",
     "custom/playerlabel"
   ],
@@ -34,9 +34,6 @@
   "hyprland/workspaces": {
     "active-only": false,
     "all-outputs": true,
-    "disable-scroll": false,
-    "on-scroll-up": "hyprctl dispatch workspace -1",
-    "on-scroll-down": "hyprctl dispatch workspace +1",
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
