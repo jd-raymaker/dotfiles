@@ -1,0 +1,4 @@
+[pulse]
+allow-moves=yes
+
+drivers=pulse
